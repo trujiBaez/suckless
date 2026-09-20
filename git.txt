@@ -1,0 +1,64 @@
+---------------------------------------
+    COMO MANTENER LA REPO EN GITHUB
+---------------------------------------
+
+Para MANTENER una repo que ya ha sido guardada
+
+    git add .
+    git commit -m "Descripción del cambio"
+    git push
+
+Ejemplo de como guardar por PRIMERA VEZ un repo en github
+
+1. Crear el repositorio local
+    cd ~/.config
+    git init nvim
+    cd nvim
+    git branch -m main
+
+2. Crear un .gitignore
+Para Neovim conviene excluir archivos generados o locales. Por ejemplo:
+
+    cat > .gitignore <<'EOF'
+    *.swp
+    *.swo
+    *.tmp
+    .netrwhist
+    lazy-lock.json
+    EOF
+
+3. Añadir los archivos
+    git add .
+
+4. Configurar la identidad si fuera necesario
+Como ya la configuramos globalmente, esto debería estar hecho:
+
+    git config --global user.name
+    git config --global user.email
+
+Debería mostrar:
+
+    trujiBaez
+    trujillo@hotmail.co.uk
+
+5. Crear el primer commit
+    
+    git commit -m "Initial Neovim configuration"
+
+6. Crear el repositorio directamente en GitHub
+Aquí viene una ventaja de gh: no necesitas entrar en el navegador para crear el repositorio.
+
+Si quieres llamarlo nvim:
+
+    gh repo create trujiBaez/nvim --public --description "Neovim configuration"
+
+Y podemos hacer que gh lo conecte con tu repositorio local y lo publique.
+Una forma muy cómoda es:
+
+    gh repo create trujiBaez/nvim --public --source=. --remote=origin --push
+
+Ese único comando, estando dentro de ~/.config/nvim, crea el repositorio en GitHub, añade origin y hace el primer push.
+
+    git add .
+    git commit -m "Descripción del cambio"
+    git push

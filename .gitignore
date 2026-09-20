@@ -1,0 +1,17 @@
+# Compiled binaries
+build/
+*/src/dwm
+*/src/st
+*/src/dmenu
+*/src/dmenu_path
+*/src/dmenu_run
+*/src/stest
+
+# Object files
+*.o
+
+# Backup files
+*.orig
+
+# Nested Git repositories
+*/src/.git/
