@@ -1692,9 +1692,15 @@ xfinishdraw(void)
 {
 	XCopyArea(xw.dpy, xw.buf, xw.win, dc.gc, 0, 0, win.w,
 			win.h, 0, 0);
+
 	XSetForeground(xw.dpy, dc.gc,
-			dc.col[IS_SET(MODE_REVERSE)?
-				defaultfg : defaultbg].pixel);
+			dc.col[IS_SET(MODE_FOCUSED) ?
+				borderfg : borderbg].pixel);
+
+	XDrawRectangle(xw.dpy, xw.win, dc.gc,
+			0, 0, win.w - 1, win.h - 1);
+	XDrawRectangle(xw.dpy, xw.win, dc.gc,
+			1, 1, win.w - 3, win.h - 3);
 }
 
 void
