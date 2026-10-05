@@ -1,13 +1,13 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int gappx     = 14;       /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "IosevkaTerm Nerd Font Propo:size=14" };
-static const char dmenufont[]       = "IosevkaTerm Nerd Font Propo:size=14";
+static const char *fonts[]          = { "IosevkaTerm Nerd Font Propo:size=12" };
+static const char dmenufont[]       = "IosevkaTerm Nerd Font Propo:size=12";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -29,8 +29,10 @@ static const Rule rules[] = {
 	 */
 	/* class          instance    title       tags mask     isfloating   monitor */
 	{ "Firefox",      NULL,       NULL,       0,            0,           -1 },
-	{ "Nemo",         NULL,       NULL,       0,            1,           -1 },
+	{ "Thunar",       NULL,       NULL,       0,            1,           -1 },
 	{ "Lxappearance", NULL,       NULL,       0,            1,           -1 },
+	{ "mpv",          NULL,       NULL,       0,            1,           -1 },
+	{ "KeePassXC",   "keepassxc", NULL,       0,            1,           -1 },
 };
 
 /* layout(s) */
@@ -64,7 +66,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 static const char *scrotfullcmd[] = { "sh", "-c", "screenshot_full.sh", NULL };
 static const char *scrotselectcmd[] = { "sh", "-c", "screenshot_select.sh", NULL };
-static const char *nemocmd[]  = { "nemo", NULL };
+static const char *thunarcmd[]  = { "thunar", NULL };
 static const char *firefoxcmd[]  = { "firefox", NULL };
 static const char *powermenucmd[] = { "powermenu", NULL };
 
@@ -73,7 +75,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = powermenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY,                       XK_e,      spawn,          {.v = nemocmd } },
+	{ MODKEY,                       XK_e,      spawn,          {.v = thunarcmd } },
 	{ MODKEY,                       XK_w,      spawn,          {.v = firefoxcmd } },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = scrotselectcmd } },
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          {.v = scrotfullcmd } },

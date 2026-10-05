@@ -1062,8 +1062,8 @@ manage(Window w, XWindowAttributes *wa)
 	c->bw = borderpx;
 
 	if (c->isfloating) {
-		c->w = 2000 - 2 * c->bw;
-		c->h = 1250 - 2 * c->bw;
+		c->w = 1800 - 2 * c->bw;
+		c->h = 1200 - 2 * c->bw;
 		c->x = c->mon->wx + (c->mon->ww - WIDTH(c)) / 2;
 		c->y = c->mon->wy + (c->mon->wh - HEIGHT(c)) / 2;
 	}

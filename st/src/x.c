@@ -1164,7 +1164,7 @@ xinit(int cols, int rows)
 	/* Events */
 	xw.attrs.background_pixel = dc.col[defaultbg].pixel;
 	xw.attrs.border_pixel = dc.col[defaultbg].pixel;
-	xw.attrs.bit_gravity = NorthWestGravity;
+    xw.attrs.bit_gravity = NorthWestGravity;
 	xw.attrs.event_mask = FocusChangeMask | KeyPressMask | KeyReleaseMask
 		| ExposureMask | VisibilityChangeMask | StructureNotifyMask
 		| ButtonMotionMask | ButtonPressMask | ButtonReleaseMask;

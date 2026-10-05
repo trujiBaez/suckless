@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Inconsolata:style=Light:size=16";
+static char *font = "Inconsolata:style=Medium:size=16";
 static int borderpx = 2;
 static int paddingx = 14;
 static int paddingy = 14;
