@@ -1164,7 +1164,7 @@ xinit(int cols, int rows)
 	/* Events */
 	xw.attrs.background_pixel = dc.col[defaultbg].pixel;
 	xw.attrs.border_pixel = dc.col[defaultbg].pixel;
-    xw.attrs.bit_gravity = NorthWestGravity;
+	xw.attrs.bit_gravity = NorthWestGravity;
 	xw.attrs.event_mask = FocusChangeMask | KeyPressMask | KeyReleaseMask
 		| ExposureMask | VisibilityChangeMask | StructureNotifyMask
 		| ButtonMotionMask | ButtonPressMask | ButtonReleaseMask;
@@ -1692,9 +1692,15 @@ xfinishdraw(void)
 {
 	XCopyArea(xw.dpy, xw.buf, xw.win, dc.gc, 0, 0, win.w,
 			win.h, 0, 0);
+
 	XSetForeground(xw.dpy, dc.gc,
-			dc.col[IS_SET(MODE_REVERSE)?
-				defaultfg : defaultbg].pixel);
+			dc.col[IS_SET(MODE_FOCUSED) ?
+				borderfg : borderbg].pixel);
+
+	XDrawRectangle(xw.dpy, xw.win, dc.gc,
+			0, 0, win.w - 1, win.h - 1);
+	XDrawRectangle(xw.dpy, xw.win, dc.gc,
+			1, 1, win.w - 3, win.h - 3);
 }
 
 void

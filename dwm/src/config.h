@@ -28,11 +28,12 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class          instance    title       tags mask     isfloating   monitor */
-	{ "Firefox",      NULL,       NULL,       0,            0,           -1 },
-	{ "Thunar",       NULL,       NULL,       0,            1,           -1 },
-	{ "Lxappearance", NULL,       NULL,       0,            1,           -1 },
-	{ "mpv",          NULL,       NULL,       0,            1,           -1 },
-	{ "KeePassXC",   "keepassxc", NULL,       0,            1,           -1 },
+	{ "Firefox",           NULL,              NULL,       0,            0,           -1 },
+	{ "Thunar",            NULL,              NULL,       0,            1,           -1 },
+	{ "Lxappearance",      NULL,              NULL,       0,            1,           -1 },
+	{ "mpv",               NULL,              NULL,       0,            1,           -1 },
+	{ "KeePassXC",         "keepassxc",       NULL,       0,            1,           -1 },
+	{ "Blueman-manager",   "blueman-manager", NULL,       0,            1,           -1 },
 };
 
 /* layout(s) */

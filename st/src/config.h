@@ -122,8 +122,12 @@ static const char *colorname[] = {
 	/* more colors can be added after 255 to use with DefaultXX */
 	"#cccccc",
 	"#555555",
-	"gray90", /* default foreground colour */
-	"black", /* default background colour */
+	"gray90",
+	"black",
+
+/* inner window border */
+	"#00A8CC",
+	"#888888",
 };
 
 
@@ -135,6 +139,9 @@ unsigned int defaultfg = 258;
 unsigned int defaultbg = 259;
 unsigned int defaultcs = 256;
 static unsigned int defaultrcs = 257;
+
+unsigned int borderfg = 260;
+unsigned int borderbg = 261;
 
 /*
  * Default shape of cursor

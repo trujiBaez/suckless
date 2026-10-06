@@ -125,9 +125,9 @@ static const char *colorname[] = {
 	"gray90",
 	"black",
 
-	/* inner window border */
+/* inner window border */
+	"#00A8CC",
 	"#888888",
-	"#444444",
 };
 
 
